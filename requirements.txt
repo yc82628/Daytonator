@@ -1,0 +1,7 @@
+daytona-sdk>=0.0.0
+fastapi>=0.110.0
+uvicorn>=0.27.0
+python-dotenv>=1.0.0
+# LLM for the verdict/explanation (optional; falls back to a heuristic without keys)
+openai>=1.40.0     # used for Featherless (free open-source models, OpenAI-compatible)
+anthropic>=0.40.0
