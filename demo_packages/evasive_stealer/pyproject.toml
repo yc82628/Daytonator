@@ -1,0 +1,4 @@
+[project]
+name = "evasive-stealer"
+version = "2.4.1"
+description = "TEST FIXTURE: a stealer that only fires when it sees cloud creds."
