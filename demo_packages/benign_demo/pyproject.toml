@@ -1,0 +1,4 @@
+[project]
+name = "benign-demo"
+version = "1.0.0"
+description = "A harmless demo package (control)."
