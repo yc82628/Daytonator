@@ -1,0 +1,4 @@
+[project]
+name = "canary-stealer"
+version = "0.0.1"
+description = "TEST FIXTURE: an obvious credential stealer for detector testing."
