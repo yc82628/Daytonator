@@ -1,0 +1,81 @@
+{
+  "package": "evasive_stealer",
+  "verdict": {
+    "package": "evasive_stealer",
+    "label": "malicious",
+    "score": 95,
+    "explanation": "Reads planted secrets and opens a network connection in the aws fork(s) while staying silent on the clean run. Credential theft that hides from a normal sandbox.",
+    "triggered_by": [
+      "aws"
+    ],
+    "evidence": [
+      "exfil:canary value left the process (aws)",
+      "network:connect 203.0.113.7:443",
+      "secret_read:open .aws/credentials"
+    ],
+    "via": "heuristic"
+  },
+  "traces": [
+    {
+      "bait": "control",
+      "package": "evasive_stealer",
+      "exit_code": 0,
+      "events": [],
+      "error": ""
+    },
+    {
+      "bait": "ssh",
+      "package": "evasive_stealer",
+      "exit_code": 0,
+      "events": [],
+      "error": ""
+    },
+    {
+      "bait": "aws",
+      "package": "evasive_stealer",
+      "exit_code": 0,
+      "events": [
+        {
+          "kind": "secret_read",
+          "detail": "open .aws/credentials",
+          "raw": "2108  openat(AT_FDCWD, \"/tmp/deto_aws_zo6s1d3o/home/.aws/credentials\", O_RDONLY|O_CLOEXEC) = 3"
+        },
+        {
+          "kind": "network",
+          "detail": "connect 203.0.113.7:443",
+          "raw": "2108  connect(3, {sa_family=AF_INET, sin_port=htons(443), sin_addr=inet_addr(\"203.0.113.7\")}, 16) = -1 EINPROGRESS (Operation now in progress)"
+        },
+        {
+          "kind": "exfil",
+          "detail": "canary value left the process (aws)",
+          "raw": ""
+        },
+        {
+          "kind": "exfil",
+          "detail": "canary value left the process (aws)",
+          "raw": ""
+        },
+        {
+          "kind": "exfil",
+          "detail": "canary value left the process (aws)",
+          "raw": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "bait": "prod",
+      "package": "evasive_stealer",
+      "exit_code": 0,
+      "events": [],
+      "error": ""
+    },
+    {
+      "bait": "clock",
+      "package": "evasive_stealer",
+      "exit_code": 0,
+      "events": [],
+      "error": ""
+    }
+  ]
+}
