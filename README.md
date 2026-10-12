@@ -2,6 +2,11 @@
 
 **Fork-and-bait differential detonation for the AI software supply chain.**
 
+> **▶ See it in action:** [interactive replay of a real scan](https://yc82628.github.io/daytonator.html) on my portfolio.
+>
+> **My role:** team hackathon project. I built the sandbox forking: one clean Daytona snapshot
+> forked into the separate baited environments that every scan runs in.
+
 AI coding agents hallucinate package names; attackers register those names with malware
 (slopsquatting). DayTonator detonates a suspicious package inside isolated **Daytona**
 sandboxes, **forks one snapshot into several baited environments**, and lets a model judge
