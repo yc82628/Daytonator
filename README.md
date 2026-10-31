@@ -2,7 +2,7 @@
 
 **Fork-and-bait differential detonation for the AI software supply chain.**
 
-> **▶ See it in action:** [interactive replay of a real scan](https://yc82628.github.io/daytonator.html) on my portfolio.
+> **▶ See it in action:** [interactive replay of a real scan](https://yuchuan.vercel.app/daytonator.html) on my portfolio.
 >
 > **My role:** team hackathon project. I built the sandbox forking: one clean Daytona snapshot
 > forked into the separate baited environments that every scan runs in.
